@@ -1,9 +1,9 @@
 import React from 'react'
-import contact from '../assets/contact.png'
+import contact from '/src/assets/contact.png'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import FooterTwo from '../components/FooterTwo'
+import FooterTwo from '/src/components/FooterTwo'
 import { motion } from "framer-motion";
 
 const Contact = () => {

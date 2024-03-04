@@ -4,7 +4,7 @@ import { BsFillCartFill, BsFillSaveFill } from 'react-icons/bs';
 import { TbTruckDelivery } from 'react-icons/tb'
 import { FaUserFriends, FaWallet } from 'react-icons/fa'
 import { MdFavorite, MdHelp } from 'react-icons/md'
-import bee from '../assets/bee.jpg'
+import bee from '/src/assets/bee.jpg'
 import { data } from '../data/data';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Food from './Food';

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Suspense } from 'react';
-import devli from '../assets/devli.jpg'
-import celebrate from '../assets/celebrate.png'
+import devli from '/src/assets/devli.jpg'
+import celebrate from '/src/assets/celebrate.png'
 import { motion } from "framer-motion";
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'))

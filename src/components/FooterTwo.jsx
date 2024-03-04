@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import bee from '../assets/bee.jpg'
+import bee from '/src/assets/bee.jpg'
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import { useNavigate } from 'react-router-dom';
-import footer from '../assets/footer.png'
+import footer from '/src/assets/footer.png'
 
 
 const FooterTwo = () => {

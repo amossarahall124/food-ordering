@@ -1,5 +1,5 @@
 import React from 'react'
-import Food from '../components/Food'
+import Food from '/src/components/Food'
 import { motion } from "framer-motion";
 
 const Menu = () => {

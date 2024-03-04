@@ -1,5 +1,5 @@
 import React from 'react'
-import about from '../assets/about.png'
+import about from '/src/assets/about.png'
 import { motion } from "framer-motion";
 
 

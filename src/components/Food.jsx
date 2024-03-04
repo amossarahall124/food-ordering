@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { data } from '../data/data';
+import { data } from '/src/data/data';
 import { BsFillCartFill, BsFillSaveFill } from 'react-icons/bs';
 import { motion } from "framer-motion";
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import carrier from '../assets/carrier.jpg'
-import open from '../assets/open.jpg'
-import ordering from '../assets/ordering.jpg'
+import carrier from '/src/assets/carrier.jpg'
+import open from '/src/assets/open.jpg'
+import ordering from '/src/assets/ordering.jpg'
 import { motion } from "framer-motion";
 
 const Cards = () => {

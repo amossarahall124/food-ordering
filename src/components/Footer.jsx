@@ -1,5 +1,5 @@
 import React from 'react';
-import { categories } from '../data/data';
+import { categories } from '/src/data/data';
 import { motion } from "framer-motion";
 
 const Footer = () => {
