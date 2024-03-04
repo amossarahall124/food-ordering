@@ -89,6 +89,7 @@ const Contact = () => {
                         <p className="w-3/5 h-full text-[18px] text-second-300">Got a question about your order? Need help with some of your app features? Contact Help Centre via  Email or phone number </p>
                     </div>
                 </div>
+                <FooterTwo />
             </motion.div>
         </div>
     )
