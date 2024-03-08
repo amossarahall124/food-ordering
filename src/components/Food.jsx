@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import { data } from '/src/data/data';
 import { BsFillCartFill, BsFillSaveFill } from 'react-icons/bs';
 import { motion } from "framer-motion";
-
+import { useDispatch } from 'react-redux'
+import { addtoCart } from '../cartSlice'
 
 const Food = (props) => {
 
-  const [cartItems, setCartItems] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 })
 
   const [foods, setFoods] = useState(data);
 
-  const addToCart = (id) => {
-    setCartItems(cartItems => ({ ...cartItems, [id]: cartItems[id] + 1 }))
-  }
+
+  const dispatch = useDispatch()
+
+  const handleAdd = (products) => {
+    dispatch(addtoCart(products));
+  };
+
 
   const filterType = (category) => {
     setFoods(
@@ -31,6 +35,7 @@ const Food = (props) => {
   };
 
   return (
+
     <div className='w-full bg-main-100 m-auto px-4 py-12'>
       <h1 className='text-second-500 font-bold text-4xl text-center'>
         Top Rated Menu Items
@@ -115,41 +120,48 @@ const Food = (props) => {
         className=""
         initial="hidden"
         animate="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.6 }}
         transition={{ duration: 2.0 }}
         variants={{
-          hidden: { opacity: 0, x: -80 },
-          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0, x: 0, scale: 0 },
+          visible: { opacity: 1, x: 0, scale: "100%" },
         }}>
 
         <div className='grid grid-cols-2 grid-row-9 lg:grid-cols-4 gap-6 pt-4'>
-          {foods.map((item, index) => (
-            <div
-              key={index}
-              className=' shadow-lg border-[5px] border-second-100  bg-second-500 rounded-lg cursor-pointer hover:scale-105 duration-300'
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className='w-full h-[200px] object-cover rounded-t-lg  '
-              />
-              <div className='flex justify-between px-2 py-4 '>
-                <p className='font-bold text-main-500 '>{item.name}</p>
-                <p>
-                  <span className='bg-main-700 text-second-100 cursor-pointer p-2 border border-black rounded-full hover:bg-main-950 hover:border-second-500 hover:text-main-500  transform hover:scale-130  transition ease-in-out duration-900'>$
-                    {item.price}
-                  </span>
-                </p>
-                <button onClick={() => {
-                  addToCart(item.id)
-                }} className='bg-main-700 text-second-100 cursor-pointer p-2 border rounded-full -mt-[5px] hover:bg-main-950 hover:border-second-100 hover:text-main-500  transform hover:scale-130  transition ease-in-out duration-900'>
-                  <BsFillCartFill size={20} className='mr-2' />
-                </button>
+          {foods.map((item, index) => {
+
+
+            return (
+
+
+              <div
+                key={index}
+                className=' shadow-lg border-[5px] border-second-100  bg-second-500 rounded-lg cursor-pointer hover:scale-105 duration-300'
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className='w-full h-[200px] object-cover rounded-t-lg  '
+                />
+                <div className='flex justify-between px-2 py-4 '>
+                  <p className='font-bold text-main-500 '>{item.name}</p>
+                  <p>
+                    <span className='bg-main-700 text-second-100 cursor-pointer p-2 border border-black rounded-full hover:bg-main-950 hover:border-second-500 hover:text-main-500  transform hover:scale-130  transition ease-in-out duration-900'>$
+                      {item.price}
+                    </span>
+                  </p>
+                  {/* 
+                  setProducts({ name: item.name, id: item.id, price: item.price, image: item.image }) */}
+                  <button onClick={() => handleAdd(item)
+                  } className='bg-main-700 text-second-100 cursor-pointer p-2 border rounded-full -mt-[5px] hover:bg-main-950 hover:border-second-100 hover:text-main-500  transform hover:scale-130  transition ease-in-out duration-900'>
+                    <BsFillCartFill size={20} className='mr-2' />
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
-      </motion.div>
+      </motion.div >
     </div >
   );
 };
