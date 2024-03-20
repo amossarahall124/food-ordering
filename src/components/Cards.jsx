@@ -3,8 +3,10 @@ import carrier from '/src/assets/carrier.jpg'
 import open from '/src/assets/open.jpg'
 import ordering from '/src/assets/ordering.jpg'
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const Cards = () => {
+  const navigate = useNavigate();
   return (
     < section className=" p-6 bg-main-100">
       <motion.div
@@ -24,7 +26,7 @@ const Cards = () => {
             <div className='absolute w-full  h-full bg-black/80 rounded-xl text-second-100'>
               <p className='font-bold text-2xl px-2 pt-4'>Same Day Delivery</p>
               <p className='px-2 text-main-950'> Anywhere 24-7</p>
-              <button className='border-main-500 bg-second-500 text-main-500 mx-2 absolute bottom-4 hover:bg-main-700 hover:border-second-500 hover:text-second-100  transform translate-x-6 hover:scale-125  transition ease-in-out duration-900 '>Order Now</button>
+              <button onClick={() => { navigate("/Menu") }} className='border-main-500 bg-second-500 text-main-500 mx-2 absolute bottom-4 hover:bg-main-700 hover:border-second-500 hover:text-second-100  transform translate-x-6 hover:scale-125  transition ease-in-out duration-900 '>Order Now</button>
             </div>
             <img
               className='max-h-[160px] md:max-h-[250px] w-full object-cover rounded-xl'
@@ -38,7 +40,7 @@ const Cards = () => {
             <div className='absolute w-full h-full bg-black/80 rounded-xl text-second-100'>
               <p className='font-bold text-2xl  px-2 pt-4'>New Meal Request</p>
               <p className='px-2 text-main-950'> We Tailer to your taste</p>
-              <button className='border-main-500 bg-second-500 text-main-500 mx-2 absolute bottom-4 hover:bg-main-700 hover:border-second-500 hover:text-second-100 transform translate-x-6 hover:scale-125  transition ease-in-out duration-900'>Order Now</button>
+              <button onClick={() => { navigate("/Menu") }} className='border-main-500 bg-second-500 text-main-500 mx-2 absolute bottom-4 hover:bg-main-700 hover:border-second-500 hover:text-second-100 transform translate-x-6 hover:scale-125  transition ease-in-out duration-900'>Order Now</button>
             </div>
             <img
               className='max-h-[160px] md:max-h-[250px] w-full object-cover rounded-xl'
@@ -52,7 +54,7 @@ const Cards = () => {
             <div className='absolute w-full h-full bg-black/80 rounded-xl text-second-100'>
               <p className='font-bold text-2xl px-2 pt-4'>Our locations Are Always Open</p>
               <p className='px-2 text-main-950'> No Preorder just Walking In</p>
-              <button className='border-main-500 bg-second-500 text-main-500 mx-2 absolute bottom-4 hover:bg-main-700 hover:border-second-500 hover:text-second-100  transform translate-x-6 hover:scale-125  transition ease-in-out duration-900'>Order Now</button>
+              <button onClick={() => { navigate("/Menu") }} className='border-main-500 bg-second-500 text-main-500 mx-2 absolute bottom-4 hover:bg-main-700 hover:border-second-500 hover:text-second-100  transform translate-x-6 hover:scale-125  transition ease-in-out duration-900'>Order Now</button>
             </div>
             <img
               className='max-h-[180px] md:max-h-[250px] w-full object-cover rounded-xl'
